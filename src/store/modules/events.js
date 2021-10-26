@@ -1,6 +1,6 @@
 import envalidate from '@siliconminds/envalidate';
-import { required, minLength } from '@siliconminds/validation/validators';
 import Api from '@siliconminds/api';
+import { required, minLength } from '@siliconminds/validation/validators';
 
 envalidate('VUE_APP_API_URL');
 
@@ -79,7 +79,7 @@ export default {
       const res = await api.delete(`${endpoint}/${payload._id}`);
       if (!res.success) return commit('pushError', res.error, { root: true });
       commit('delete', payload);
-      if (getters.pagination.page > 1 && getters.events.length < 1) return dispatch('set_page', -1);
+      if (getters.pagination.page > 1 && getters.all.length < 1) return dispatch('set_page', -1);
       return true;
     },
   },
