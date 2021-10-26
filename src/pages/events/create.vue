@@ -2,7 +2,7 @@
   <div class="container mx-auto">
     <PageHeading title="Create Event" />
     <DynamicForm
-      @submit.prevent="submit()"
+      @submit="submit()"
       :fields="fields"
       v-model="event"
     />
