@@ -79,8 +79,7 @@ export default {
       const res = await api.delete(`${endpoint}/${payload._id}`);
       if (!res.success) return commit('pushError', res.error, { root: true });
       commit('delete', payload);
-      if (getters.pagination.page > 1 && getters.all.length < 1) return dispatch('set_page', -1);
-      return true;
+      return dispatch('set_page', (getters.pagination.page > 1 && getters.all.length < 1) ? -1 : 0);
     },
   },
   mutations: {
