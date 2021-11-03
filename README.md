@@ -1,24 +1,41 @@
-# app3
+# APP Template
+This template offers boilerplate code for generating siliconminds apps
 
-## Project setup
+## Quick start
+### Installing:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Development:
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Production build:
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Features
+### Overview
+- dynamic routing and page loading
+- base component set
+- tailwindcss
+- heroicons
+- global alert system
+- easy api helper
+- auth store
+- auth pages
+- example crud store and pages
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Dynamic pages
+All pages in the 'src/pages/' directory are automatically routed on the path starting from 'src/pages/'
+
+For example, 'src/pages/index.vue/' will be served at '/'
+
+Router params are configured by prepending page filenames with '_'
+
+For example, 'src/pages/items/_id.vue' will be served at '/items/itemdId' with 'itemId' being set on '$route.params._id'.
+
+
